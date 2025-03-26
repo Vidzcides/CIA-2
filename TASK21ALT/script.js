@@ -5,13 +5,17 @@ function isValidEmail(email) {
 }
 
 function validateEmail() {
-    // Get the email input value
-    const email = document.getElementById("emailInput").value;
+    // Use prompt to get the email input value
+    const email = prompt("Enter your email:");
 
     // Check if the email is valid
-    if (isValidEmail(email)) {
-        alert("The email address is valid.");
+    if (email) {
+        if (isValidEmail(email)) {
+            alert("The email address is valid.");
+        } else {
+            alert("The email address is invalid. Please enter a valid email address.");
+        }
     } else {
-        alert("The email address is invalid. Please enter a valid email address.");
+        alert("No email entered. Please enter a valid email address.");
     }
 }
